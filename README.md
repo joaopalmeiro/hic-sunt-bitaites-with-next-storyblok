@@ -16,3 +16,4 @@
 - [Install Tailwind CSS with Next.js](https://tailwindcss.com/docs/guides/nextjs) documentation
 - [next.config.js](https://nextjs.org/docs/api-reference/next.config.js/introduction) documentation
 - `npm install --save-dev prettier eslint-plugin-prettier eslint-config-prettier`
+- _New Folder_ > _Folder content settings_ > Check _Disable visual composer_

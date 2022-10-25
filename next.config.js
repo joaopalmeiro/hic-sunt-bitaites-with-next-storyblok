@@ -4,6 +4,6 @@ const nextConfig = {
   reactStrictMode: true,
   // https://nextjs.org/docs/advanced-features/compiler#minification
   swcMinify: true,
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
