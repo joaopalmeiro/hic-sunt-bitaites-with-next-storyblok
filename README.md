@@ -17,3 +17,4 @@
 - [next.config.js](https://nextjs.org/docs/api-reference/next.config.js/introduction) documentation
 - `npm install --save-dev prettier eslint-plugin-prettier eslint-config-prettier`
 - _New Folder_ > _Folder content settings_ > Check _Disable visual composer_
+- `npm install storyblok-js-client` (https://www.npmjs.com/package/storyblok-js-client)
