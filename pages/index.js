@@ -5,11 +5,11 @@ import StoryblokClient from 'storyblok-js-client';
 
 // https://tailwindcss.com/docs/guides/nextjs
 // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/pages/index.js
-export default function Home({ data }) {
+export default function Home({ allPosts }) {
   return (
     <>
       <h1>Hic Sunt Bitaites</h1>
-      <p>{JSON.stringify(data.stories)}</p>
+      <p>{JSON.stringify(allPosts)}</p>
     </>
   );
 }
@@ -45,7 +45,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data,
+      allPosts: data.stories,
     },
     // https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration
     revalidate: 3600,
