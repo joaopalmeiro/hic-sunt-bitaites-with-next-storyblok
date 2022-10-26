@@ -5,24 +5,26 @@
 // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/lib/api.js#L84
 import RichTextResolver from 'storyblok-js-client/dist/richTextResolver';
 
+import Container from '../../components/container';
+import Header from '../../components/header';
 import { getAllPostsWithSlug, getPostBySlug } from '../../lib/api';
 
 import styles from './posts.module.css';
 
 export default function Post({ post }) {
-  console.log(styles);
+  // console.log(styles);
 
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/markdown-styles.module.css
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/post-body.js#L7
   // https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css
   return (
-    <>
+    <Container>
+      <Header />
       <div
         dangerouslySetInnerHTML={{ __html: post.html }}
         className={styles['post']}
       />
-      <p>{JSON.stringify(post)}</p>
-    </>
+    </Container>
   );
 }
 

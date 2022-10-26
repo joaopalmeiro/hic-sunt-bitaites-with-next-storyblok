@@ -1,6 +1,8 @@
 import random from 'just-random';
 import Link from 'next/link';
 
+import Container from '../components/container';
+import Header from '../components/header';
 import { getAllPostsWithSlug } from '../lib/api';
 import { ARROWS, DATE_FORMATTER } from '../lib/constants';
 
@@ -12,33 +14,33 @@ export default function Home({ allPosts, postArrows }) {
 
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/post-preview.js#L19
   // https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-parent-state
-  // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/container.js
-  // https://tailwindcss.com/docs/container
-  // https://next-blog-storyblok.vercel.app/
   return (
-    <div className='container mx-auto flex min-h-screen flex-col px-5'>
-      <header>
-        <h1>Hic Sunt Bitaites</h1>
-      </header>
-      <main>
+    <Container>
+      <Header />
+      <main className='flex flex-col gap-6'>
         {allPosts.map((post, index) => (
           <Link href={post.full_slug} key={post.slug}>
-            <div className='group hover:cursor-alias'>
-              <h2 className='group-hover:underline'>{post.content.Title}</h2>
-              <span>A partir de um {post.content.Local} • </span>
-              <time dateTime={post.first_published_at}>
-                {DATE_FORMATTER.format(new Date(post.first_published_at))}
-              </time>
-              <span className='p-2 group-hover:bg-slate-100'>
+            {/* https://github.com/delbaoliveira/website/blob/main/ui/Navigation.tsx#L17 */}
+            <a className='group flex flex-row justify-between border-b-2 border-white hover:cursor-alias hover:border-slate-100'>
+              <div>
+                <h2 className='text-2xl'>{post.content.Title}</h2>
+                <span className='text-slate-500'>
+                  A partir de um {post.content.Local} •{' '}
+                  <time dateTime={post.first_published_at}>
+                    {DATE_FORMATTER.format(new Date(post.first_published_at))}
+                  </time>
+                </span>
+              </div>
+              <span className='flex items-center p-4 text-xl group-hover:bg-slate-100'>
                 {postArrows[index]}
               </span>
-            </div>
+            </a>
           </Link>
         ))}
       </main>
       {/* https://radu.link/make-footer-stay-bottom-page-tailwind-css/ */}
-      <footer className='mt-auto'>João Palmeiro</footer>
-    </div>
+      {/* <footer className='mt-auto'>João Palmeiro</footer> */}
+    </Container>
   );
 }
 
