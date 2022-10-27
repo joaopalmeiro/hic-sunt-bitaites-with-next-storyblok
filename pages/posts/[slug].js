@@ -13,6 +13,7 @@ import { genLocalString } from '../../lib/utils';
 
 export default function Post({ post }) {
   // console.log(styles);
+  // console.log(post.html);
 
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/markdown-styles.module.css
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/post-body.js#L7
@@ -24,7 +25,7 @@ export default function Post({ post }) {
         dangerouslySetInnerHTML={{ __html: post.html }}
         // https://tailwindcss.com/docs/typography-plugin#basic-usage
         // https://tailwindcss.com/docs/customizing-colors
-        className='prose prose-slate lg:prose-xl'
+        className='prose prose-slate mt-12 lg:prose-xl'
       />
 
       {/* https://flowbite.com/docs/typography/hr/ */}

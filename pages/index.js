@@ -19,15 +19,13 @@ export default function Home({ allPosts, postArrows }) {
   return (
     <Container>
       <Header />
-      <main className='flex flex-col gap-8'>
+      <main className='mt-12 flex flex-col gap-8'>
         {allPosts.map((post, index) => (
           <Link href={post.full_slug} key={post.slug}>
             {/* https://github.com/delbaoliveira/website/blob/main/ui/Navigation.tsx#L17 */}
             <a className='group flex flex-row justify-between border-b-2 border-white hover:cursor-alias hover:border-slate-100'>
               <div>
-                <h2 className='text-2xl text-slate-900'>
-                  {post.content.Title}
-                </h2>
+                <h2 className='text-2xl text-slate-900'>{post.name}</h2>
                 <span className='text-slate-500'>
                   {genLocalString(post.content.Local)}
                   <DateComponent dt={post.first_published_at} />
