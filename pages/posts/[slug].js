@@ -6,10 +6,10 @@
 import RichTextResolver from 'storyblok-js-client/dist/richTextResolver';
 
 import Container from '../../components/container';
+import DateComponent from '../../components/date';
 import Header from '../../components/header';
 import { getAllPostsWithSlug, getPostBySlug } from '../../lib/api';
-
-import styles from './posts.module.css';
+import { genLocalString } from '../../lib/utils';
 
 export default function Post({ post }) {
   // console.log(styles);
@@ -20,10 +20,20 @@ export default function Post({ post }) {
   return (
     <Container>
       <Header />
-      <div
+      <article
         dangerouslySetInnerHTML={{ __html: post.html }}
-        className={styles['post']}
+        // https://tailwindcss.com/docs/typography-plugin#basic-usage
+        // https://tailwindcss.com/docs/customizing-colors
+        className='prose prose-slate lg:prose-xl'
       />
+
+      {/* https://flowbite.com/docs/typography/hr/ */}
+      <hr className='my-6 h-px border-0 bg-slate-200' />
+
+      <span className='mb-12 inline-block text-slate-500'>
+        {genLocalString(post.content.Local)}
+        <DateComponent dt={post.first_published_at} />
+      </span>
     </Container>
   );
 }

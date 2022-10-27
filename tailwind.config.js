@@ -13,5 +13,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // https://tailwindcss.com/docs/typography-plugin
+    // https://github.com/Atinux/content-wind/blob/main/tailwind.config.ts
+    require('@tailwindcss/typography'),
+  ],
 };

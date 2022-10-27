@@ -2,9 +2,11 @@ import random from 'just-random';
 import Link from 'next/link';
 
 import Container from '../components/container';
+import DateComponent from '../components/date';
 import Header from '../components/header';
 import { getAllPostsWithSlug } from '../lib/api';
-import { ARROWS, DATE_FORMATTER } from '../lib/constants';
+import { ARROWS } from '../lib/constants';
+import { genLocalString } from '../lib/utils';
 
 // https://tailwindcss.com/docs/guides/nextjs
 // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/pages/index.js
@@ -17,23 +19,21 @@ export default function Home({ allPosts, postArrows }) {
   return (
     <Container>
       <Header />
-      <main className='flex flex-col gap-6'>
+      <main className='flex flex-col gap-8'>
         {allPosts.map((post, index) => (
           <Link href={post.full_slug} key={post.slug}>
             {/* https://github.com/delbaoliveira/website/blob/main/ui/Navigation.tsx#L17 */}
             <a className='group flex flex-row justify-between border-b-2 border-white hover:cursor-alias hover:border-slate-100'>
               <div>
-                <h2 className='text-2xl text-slate-800'>
+                <h2 className='text-2xl text-slate-900'>
                   {post.content.Title}
                 </h2>
                 <span className='text-slate-500'>
-                  A partir de um {post.content.Local} •{' '}
-                  <time dateTime={post.first_published_at}>
-                    {DATE_FORMATTER.format(new Date(post.first_published_at))}
-                  </time>
+                  {genLocalString(post.content.Local)}
+                  <DateComponent dt={post.first_published_at} />
                 </span>
               </div>
-              <span className='flex items-center p-4 text-xl text-slate-500 group-hover:bg-slate-100 group-hover:text-slate-800'>
+              <span className='flex items-center p-4 text-xl text-slate-500 group-hover:bg-slate-100 group-hover:text-slate-900'>
                 {postArrows[index]}
               </span>
             </a>

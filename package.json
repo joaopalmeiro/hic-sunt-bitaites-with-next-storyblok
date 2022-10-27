@@ -17,6 +17,7 @@
     "storyblok-js-client": "5.0.2"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "0.5.7",
     "autoprefixer": "10.4.12",
     "eslint": "8.26.0",
     "eslint-config-next": "12.3.1",
