@@ -23,7 +23,9 @@ export default function Home({ allPosts, postArrows }) {
             {/* https://github.com/delbaoliveira/website/blob/main/ui/Navigation.tsx#L17 */}
             <a className='group flex flex-row justify-between border-b-2 border-white hover:cursor-alias hover:border-slate-100'>
               <div>
-                <h2 className='text-2xl'>{post.content.Title}</h2>
+                <h2 className='text-2xl text-slate-800'>
+                  {post.content.Title}
+                </h2>
                 <span className='text-slate-500'>
                   A partir de um {post.content.Local} •{' '}
                   <time dateTime={post.first_published_at}>
@@ -31,7 +33,7 @@ export default function Home({ allPosts, postArrows }) {
                   </time>
                 </span>
               </div>
-              <span className='flex items-center p-4 text-xl group-hover:bg-slate-100'>
+              <span className='flex items-center p-4 text-xl text-slate-500 group-hover:bg-slate-100 group-hover:text-slate-800'>
                 {postArrows[index]}
               </span>
             </a>

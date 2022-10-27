@@ -21,3 +21,4 @@
 - _New Folder_ > _Folder content settings_ > Check _Disable visual composer_
 - `npm install storyblok-js-client` (https://www.npmjs.com/package/storyblok-js-client)
 - `npm install --save-dev prettier-plugin-tailwindcss`
+- https://fonts.google.com/variablefonts

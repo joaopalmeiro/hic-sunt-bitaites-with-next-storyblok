@@ -6,8 +6,10 @@ export default function Header() {
     <header className='my-12 flex flex-row items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5'>
       {/* https://github.com/delbaoliveira/website/blob/main/ui/Layout.tsx#L73 */}
       <Link href='/'>
-        <a className='font-medium'>
-          <h1>Hic Sunt Bitaites</h1>
+        <a>
+          <h1 className='font-cursive text-2xl font-medium text-slate-800'>
+            Hic Sunt Bitaites
+          </h1>
         </a>
       </Link>
 
