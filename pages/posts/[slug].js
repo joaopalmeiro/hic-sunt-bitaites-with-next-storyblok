@@ -44,7 +44,7 @@ export default function Post({ post }) {
       {/* https://flowbite.com/docs/typography/hr/ */}
       <hr className='my-6 h-px border-0 bg-slate-200' />
 
-      <span className='mb-12 inline-block text-slate-500'>
+      <span className='mb-12 inline-block text-sm text-slate-500 lg:text-base'>
         {genLocalString(post.content.Local)}
         <DateComponent dt={post.first_published_at} />
       </span>
