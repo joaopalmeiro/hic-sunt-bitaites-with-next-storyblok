@@ -19,6 +19,7 @@
     "storyblok-js-client": "5.0.2"
   },
   "devDependencies": {
+    "@iconify/icons-fluent-emoji-high-contrast": "1.2.2",
     "@tailwindcss/typography": "0.5.7",
     "autoprefixer": "10.4.12",
     "eslint": "8.26.0",

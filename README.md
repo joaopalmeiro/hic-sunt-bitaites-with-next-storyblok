@@ -25,3 +25,4 @@
 - https://ie.godaddy.com/help/add-an-a-record-19238
 - https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt
 - https://github.com/vercel/next.js/issues/37489 (https://github.com/vercel/next.js/issues/37489#issuecomment-1209307726 + https://github.com/vercel/next.js/discussions/39425#discussioncomment-3744503 + https://github.com/vercel/next.js/discussions/39425#discussioncomment-3357498)
+- `npm install @iconify/icons-fluent-emoji-high-contrast --save-dev`

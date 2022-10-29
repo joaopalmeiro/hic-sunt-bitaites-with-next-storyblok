@@ -1,3 +1,4 @@
+import dragonIcon from '@iconify/icons-fluent-emoji-high-contrast/dragon';
 import random from 'just-random';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -14,13 +15,28 @@ import { genLocalString } from '../lib/utils';
 export default function Home({ allPosts, postArrows }) {
   // console.log(allPosts);
   // console.log(postArrows);
+  console.log(dragonIcon);
 
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/post-preview.js#L19
   // https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-parent-state
+
+  // https://austingil.com/svg-favicons/
+  // https://fav.farm/
+  // https://emojicon.dev/
+  // https://docs.iconify.design/icon-components/react/#offline-use
+  // https://docs.iconify.design/icon-components/react/offline.html
+  // https://icon-sets.iconify.design/fluent-emoji-high-contrast/dragon/
+  // https://docs.iconify.design/icon-components/react/offline.html#modules
+  // https://www.npmjs.com/package/mini-svg-data-uri
   return (
     <Container>
       <Head>
         <title>{BLOG_TITLE}</title>
+        <link
+          rel='icon'
+          // FIX
+          href={`data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${dragonIcon.width} ${dragonIcon.height}'>${dragonIcon.body}</svg>`}
+        />
       </Head>
 
       <Header />
