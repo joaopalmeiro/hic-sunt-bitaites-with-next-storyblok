@@ -28,7 +28,7 @@ export default function Post({ post }) {
         </title>
         <meta
           property='og:image'
-          content={`https://hic-sunt-bitaites-with-next-storyblok.vercel.app/api/og?title=${post.name}`}
+          content={`https://hicsuntbitait.es/api/og?title=${post.name}`}
         />
       </Head>
 
