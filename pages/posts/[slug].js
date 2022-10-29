@@ -38,7 +38,7 @@ export default function Post({ post }) {
         dangerouslySetInnerHTML={{ __html: post.html }}
         // https://tailwindcss.com/docs/typography-plugin#basic-usage
         // https://tailwindcss.com/docs/customizing-colors
-        className='prose prose-slate mt-12 lg:prose-xl'
+        className='prose prose-slate mt-4 lg:mt-12 lg:prose-xl'
       />
 
       {/* https://flowbite.com/docs/typography/hr/ */}
