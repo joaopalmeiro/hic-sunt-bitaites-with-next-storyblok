@@ -1,11 +1,12 @@
 import random from 'just-random';
+import Head from 'next/head';
 import Link from 'next/link';
 
 import Container from '../components/container';
 import DateComponent from '../components/date';
 import Header from '../components/header';
 import { getAllPostsWithSlug } from '../lib/api';
-import { ARROWS } from '../lib/constants';
+import { ARROWS, BLOG_TITLE } from '../lib/constants';
 import { genLocalString } from '../lib/utils';
 
 // https://tailwindcss.com/docs/guides/nextjs
@@ -18,7 +19,12 @@ export default function Home({ allPosts, postArrows }) {
   // https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-parent-state
   return (
     <Container>
+      <Head>
+        <title>{BLOG_TITLE}</title>
+      </Head>
+
       <Header />
+
       <main className='mt-12 flex flex-col gap-8'>
         {allPosts.map((post, index) => (
           <Link href={post.full_slug} key={post.slug}>

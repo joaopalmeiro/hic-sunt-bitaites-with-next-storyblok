@@ -22,3 +22,5 @@
 - `npm install storyblok-js-client` (https://www.npmjs.com/package/storyblok-js-client)
 - `npm install --save-dev prettier-plugin-tailwindcss`
 - https://fonts.google.com/variablefonts
+- https://ie.godaddy.com/help/add-an-a-record-19238
+- https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt

@@ -1,6 +1,8 @@
 import { Twitter } from 'lucide-react';
 import Link from 'next/link';
 
+import { BLOG_TITLE } from '../lib/constants';
+
 // https://tailwindcss.com/docs/position#sticky-positioning-elements
 // https://www.dhairyashah.dev/posts/lets-make-a-stickyfixed-navbar-in-both-vanilla-and-tailwind-css
 export default function Header() {
@@ -10,8 +12,8 @@ export default function Header() {
         {/* https://github.com/delbaoliveira/website/blob/main/ui/Layout.tsx#L73 */}
         <Link href='/'>
           <a>
-            <h1 className='font-cursive text-2xl font-medium text-slate-900'>
-              Hic Sunt Bitaites
+            <h1 className='font-cursive text-2xl text-slate-900'>
+              {BLOG_TITLE}
             </h1>
           </a>
         </Link>

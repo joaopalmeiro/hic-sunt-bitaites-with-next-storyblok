@@ -3,12 +3,14 @@
 // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/post-body.js
 // https://github.com/storyblok/storyblok-js-client#using-the-richtextresolver-separately
 // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/lib/api.js#L84
+import Head from 'next/head';
 import RichTextResolver from 'storyblok-js-client/dist/richTextResolver';
 
 import Container from '../../components/container';
 import DateComponent from '../../components/date';
 import Header from '../../components/header';
 import { getAllPostsWithSlug, getPostBySlug } from '../../lib/api';
+import { BLOG_TITLE } from '../../lib/constants';
 import { genLocalString } from '../../lib/utils';
 
 export default function Post({ post }) {
@@ -20,7 +22,18 @@ export default function Post({ post }) {
   // https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css
   return (
     <Container>
+      <Head>
+        <title>
+          {post.name} | {BLOG_TITLE}
+        </title>
+        <meta
+          property='og:image'
+          content={`https://hic-sunt-bitaites-with-next-storyblok.vercel.app/api/og?title=${post.name}`}
+        />
+      </Head>
+
       <Header />
+
       <article
         dangerouslySetInnerHTML={{ __html: post.html }}
         // https://tailwindcss.com/docs/typography-plugin#basic-usage
