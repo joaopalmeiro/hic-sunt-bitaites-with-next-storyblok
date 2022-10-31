@@ -33,6 +33,7 @@ export default async function handler(req) {
   // const title = searchParams.get('title');
   // https://tailwindcss.com/docs/max-width
   const title = truncate(searchParams.get('title'), 65);
+  // console.log(title);
 
   // https://tailwindcss.com/docs/font-size
   return new ImageResponse(

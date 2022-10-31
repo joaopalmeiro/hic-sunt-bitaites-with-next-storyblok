@@ -15,7 +15,7 @@ import { genLocalString } from '../lib/utils';
 export default function Home({ allPosts, postArrows }) {
   // console.log(allPosts);
   // console.log(postArrows);
-  console.log(dragonIcon);
+  // console.log(dragonIcon);
 
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/post-preview.js#L19
   // https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-parent-state

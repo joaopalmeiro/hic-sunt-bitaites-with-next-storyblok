@@ -1,5 +1,9 @@
 # hic-sunt-bitaites-with-next-storyblok
 
+> https://hicsuntbitait.es/
+
+My personal blog in Portuguese.
+
 ## Development
 
 - `npm install`

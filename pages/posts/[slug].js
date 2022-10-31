@@ -28,7 +28,9 @@ export default function Post({ post }) {
         </title>
         <meta
           property='og:image'
-          content={`https://hicsuntbitait.es/api/og?title=${post.name}`}
+          content={`https://hicsuntbitait.es/api/og?title=${encodeURIComponent(
+            post.name
+          )}`}
         />
       </Head>
 
