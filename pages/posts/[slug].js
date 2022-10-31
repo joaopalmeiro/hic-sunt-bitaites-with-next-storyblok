@@ -16,6 +16,7 @@ import { genLocalString } from '../../lib/utils';
 export default function Post({ post }) {
   // console.log(styles);
   // console.log(post.html);
+  // console.log(post);
 
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/markdown-styles.module.css
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/post-body.js#L7
