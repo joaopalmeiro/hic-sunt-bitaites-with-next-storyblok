@@ -24,11 +24,21 @@ export default function Post({ post }) {
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/markdown-styles.module.css
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/post-body.js#L7
   // https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css
+
+  // https://ogp.me/
+  // https://developers.facebook.com/docs/sharing/webmasters/
+  // https://developers.facebook.com/tools/debug/
+  // https://webcode.tools/generators/open-graph/article
   return (
     <Container>
       <Head>
         <title>{pageTitle}</title>
         <link rel='icon' href={genFavicon(LOCAL_ICONS[post.content.Local])} />
+
+        <meta property='og:title' content={pageTitle} />
+        <meta property='og:type' content='article' />
+        <meta property='article:author' content='João Palmeiro' />
+        <meta property='og:description' content={post.content.Summary} />
         <meta
           property='og:image'
           content={`https://hicsuntbitait.es/api/og?title=${encodeURIComponent(
