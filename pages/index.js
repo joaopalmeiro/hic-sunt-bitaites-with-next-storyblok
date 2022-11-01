@@ -12,6 +12,11 @@ import { genFavicon, genLocalString } from '../lib/utils';
 
 // https://tailwindcss.com/docs/guides/nextjs
 // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/pages/index.js
+
+// https://blog.tomayac.com/2019/09/21/prefers-color-scheme-in-svg-favicons-for-dark-mode-icons/
+// https://gist.github.com/iansinnott/2e8fe9d9e4c6c7c55793d38f81c999a3
+// https://reactjs.org/docs/react-dom-server.html#rendertostaticmarkup
+// https://web.dev/building-an-adaptive-favicon/
 export default function Home({ allPosts, postArrows }) {
   // console.log(allPosts);
   // console.log(postArrows);
