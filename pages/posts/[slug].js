@@ -37,7 +37,6 @@ export default function Post({ post }) {
 
         <meta property='og:title' content={pageTitle} />
         <meta property='og:type' content='article' />
-        <meta property='article:author' content='João Palmeiro' />
         <meta property='og:url' content={`${BASE_URL}/posts/${post.slug}`} />
         <meta property='og:description' content={post.content.Summary} />
         <meta
