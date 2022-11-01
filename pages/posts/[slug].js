@@ -10,13 +10,16 @@ import Container from '../../components/container';
 import DateComponent from '../../components/date';
 import Header from '../../components/header';
 import { getAllPostsWithSlug, getPostBySlug } from '../../lib/api';
-import { BLOG_TITLE } from '../../lib/constants';
-import { genLocalString } from '../../lib/utils';
+import { BLOG_TITLE, LOCAL_ICONS } from '../../lib/constants';
+import { genFavicon, genLocalString } from '../../lib/utils';
 
 export default function Post({ post }) {
   // console.log(styles);
   // console.log(post.html);
   // console.log(post);
+  // console.log(LOCAL_ICONS);
+
+  const pageTitle = `${post.name} | ${BLOG_TITLE}`;
 
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/markdown-styles.module.css
   // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/components/post-body.js#L7
@@ -24,9 +27,8 @@ export default function Post({ post }) {
   return (
     <Container>
       <Head>
-        <title>
-          {post.name} | {BLOG_TITLE}
-        </title>
+        <title>{pageTitle}</title>
+        <link rel='icon' href={genFavicon(LOCAL_ICONS[post.content.Local])} />
         <meta
           property='og:image'
           content={`https://hicsuntbitait.es/api/og?title=${encodeURIComponent(

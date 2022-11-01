@@ -8,7 +8,7 @@ import DateComponent from '../components/date';
 import Header from '../components/header';
 import { getAllPostsWithSlug } from '../lib/api';
 import { ARROWS, BLOG_TITLE } from '../lib/constants';
-import { genLocalString } from '../lib/utils';
+import { genFavicon, genLocalString } from '../lib/utils';
 
 // https://tailwindcss.com/docs/guides/nextjs
 // https://github.com/vercel/next.js/blob/canary/examples/cms-storyblok/pages/index.js
@@ -32,11 +32,7 @@ export default function Home({ allPosts, postArrows }) {
     <Container>
       <Head>
         <title>{BLOG_TITLE}</title>
-        <link
-          rel='icon'
-          // FIX
-          href={`data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${dragonIcon.width} ${dragonIcon.height}'>${dragonIcon.body}</svg>`}
-        />
+        <link rel='icon' href={genFavicon(dragonIcon)} />
       </Head>
 
       <Header />
