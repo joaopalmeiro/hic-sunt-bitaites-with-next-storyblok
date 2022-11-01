@@ -29,6 +29,9 @@ export default function Post({ post }) {
   // https://developers.facebook.com/docs/sharing/webmasters/
   // https://developers.facebook.com/tools/debug/
   // https://webcode.tools/generators/open-graph/article
+  // https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started
+  // https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup
+  // https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards
   return (
     <Container>
       <Head>
@@ -43,6 +46,8 @@ export default function Post({ post }) {
           property='og:image'
           content={`${BASE_URL}/api/og?title=${encodeURIComponent(post.name)}`}
         />
+
+        <meta name='twitter:card' content='summary_large_image' />
       </Head>
 
       <Header />
