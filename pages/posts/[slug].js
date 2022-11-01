@@ -10,7 +10,7 @@ import Container from '../../components/container';
 import DateComponent from '../../components/date';
 import Header from '../../components/header';
 import { getAllPostsWithSlug, getPostBySlug } from '../../lib/api';
-import { BLOG_TITLE, LOCAL_ICONS } from '../../lib/constants';
+import { BASE_URL, BLOG_TITLE, LOCAL_ICONS } from '../../lib/constants';
 import { genFavicon, genLocalString } from '../../lib/utils';
 
 export default function Post({ post }) {
@@ -38,12 +38,11 @@ export default function Post({ post }) {
         <meta property='og:title' content={pageTitle} />
         <meta property='og:type' content='article' />
         <meta property='article:author' content='João Palmeiro' />
+        <meta property='og:url' content={`${BASE_URL}/posts/${post.slug}`} />
         <meta property='og:description' content={post.content.Summary} />
         <meta
           property='og:image'
-          content={`https://hicsuntbitait.es/api/og?title=${encodeURIComponent(
-            post.name
-          )}`}
+          content={`${BASE_URL}/api/og?title=${encodeURIComponent(post.name)}`}
         />
       </Head>
 
